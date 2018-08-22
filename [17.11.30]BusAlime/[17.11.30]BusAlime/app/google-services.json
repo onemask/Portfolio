@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "737914874289",
+    "firebase_url": "https://busalime-6b8da.firebaseio.com",
+    "project_id": "busalime-6b8da",
+    "storage_bucket": "busalime-6b8da.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:737914874289:android:8184a675b12f5e9c",
+        "android_client_info": {
+          "package_name": "com.memoming.busalime"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "737914874289-ug8ma7jti473rm2602h6g1vhdpg7bbm3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.memoming.busalime",
+            "certificate_hash": "5758a6039e32353f653b82105120ce9ff588d4a1"
+          }
+        },
+        {
+          "client_id": "737914874289-1r4ob14q7f3jenrun61j9ko27v8e52uc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHKD7B31T2_swe5P0TpfH4vg8XZY6TuJk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "737914874289-1r4ob14q7f3jenrun61j9ko27v8e52uc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

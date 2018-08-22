@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/stNmTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="정류소명"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+
+        <Button
+            android:id="@+id/locateBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/refreshBtn"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignStart="@+id/refreshBtn"
+            android:layout_below="@+id/bar2"
+            android:drawableLeft="@drawable/marker"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:drawablePadding="18dip"
+            android:background="@drawable/button3"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dip"
+            android:text=" 현재 위치"
+            android:textSize="12pt" />
+
+        <Button
+            android:layout_marginTop="10dp"
+            android:id="@+id/refreshBtn"
+            android:layout_width="160dp"
+            android:layout_height="50dp"
+            android:background="@drawable/button2"
+            android:drawableLeft="@drawable/refresh"
+            android:drawablePadding="18dip"
+            android:gravity="center_vertical"
+            android:paddingLeft="18dip"
+            android:text="새로고침"
+            android:textSize="12pt"
+            android:layout_below="@+id/mapView"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="5dp"
+            android:layout_alignParentEnd="true" />
+
+
+        <Button
+            android:id="@+id/busBtn"
+            android:layout_width="150dp"
+            android:layout_marginLeft="5dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/button3"
+            android:layout_alignBaseline="@+id/locateBtn"
+            android:layout_alignBottom="@+id/locateBtn"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:drawableLeft="@drawable/marker"
+            android:gravity="center_vertical"
+            android:drawablePadding="10dip"
+            android:layout_marginTop="5dp"
+            android:paddingLeft="10dip"
+            android:text="도착지 확인"
+            android:textSize="12pt" />
+
+        <Button
+            android:layout_marginTop="10dp"
+            android:id="@+id/alramBtn"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="5dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/mapView"
+            android:background="@drawable/button"
+            android:drawableLeft="@drawable/draw_alarm"
+            android:drawablePadding="18dip"
+            android:gravity="center_vertical"
+            android:paddingLeft="18dip"
+            android:text="알람설정"
+            android:textColor="#ffffff"
+            android:textSize="12pt" />
+
+        <!--<ImageView-->
+            <!--android:id="@+id/bar2"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="20dp"-->
+            <!--android:layout_alignParentLeft="true"-->
+            <!--android:layout_alignParentStart="true"-->
+            <!--android:layout_below="@+id/stNmTextView"-->
+            <!--android:src="@drawable/blackbar" />-->
+
+        <View
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerInParent="true"
+            android:layout_below="@+id/stNmTextView"
+            android:background="#000000"
+            android:id="@+id/bar2" />
+
+        <fragment
+            android:layout_marginTop="5dp"
+            android:id="@+id/mapView"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/busBtn"
+            android:clickable="false" />
+
+        <TextView
+            android:id="@+id/currLocation"
+            android:layout_width="380dp"
+            android:layout_height="wrap_content"
+            android:text="현재 위치"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:layout_below="@+id/view"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+
+        <TextView
+            android:id="@+id/distanceTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="남은거리"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:layout_above="@+id/exitBtn"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <!--<ImageView-->
+            <!--android:id="@+id/bar"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="30dp"-->
+            <!--android:src="@drawable/blackbar"-->
+            <!--android:layout_alignParentLeft="true"-->
+            <!--android:layout_alignParentStart="true"-->
+            <!--android:layout_above="@+id/currLocation"-->
+            <!--android:layout_below="@+id/refreshBtn" />-->
+
+        <View
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/refreshBtn"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_centerInParent="true"
+        android:background="#000000"
+        android:id="@+id/view" />
+
+
+        <Button
+            android:id="@+id/exitBtn"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#EA764B"
+            android:text="닫기"
+            android:textSize="15dp"
+
+            android:textAppearance="@style/TextAppearance.AppCompat.Menu"
+            android:textColor="#FFFFFF"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+    </RelativeLayout>
+    </ScrollView>

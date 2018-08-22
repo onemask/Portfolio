@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/bus_stop"
+            android:checked="true"
+            android:icon="@drawable/ic_bus_stop"
+            android:title="@string/str_stop" />
+        <item
+            android:id="@+id/bus_num"
+            android:icon="@drawable/ic_bus_num"
+            android:title="@string/str_busnum" />
+        <item
+            android:id="@+id/setting"
+            android:icon="@drawable/ic_setting"
+            android:title="@string/str_setting" />
+    </group>
+
+    <item
+
+        android:title="@string/str_bookmark">
+        <menu>
+            <item
+                android:icon="@drawable/ic_place"
+                android:id="@+id/nav_sub_menu_item01"
+                android:title="@string/str_item1" />
+            <item
+                android:icon="@drawable/ic_place"
+                android:id="@+id/nav_sub_menu_item02"
+                android:title="@string/str_item2" />
+        </menu>
+    </item>
+</menu>

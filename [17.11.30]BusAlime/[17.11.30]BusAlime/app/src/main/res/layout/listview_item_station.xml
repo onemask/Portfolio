@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_marginLeft="10dp"
+    android:layout_marginTop="7dp"
+    android:layout_marginBottom="5dp"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"> <!-- 이부분이 아이템별 높이인듯 -->
+
+    <TextView
+        android:layout_marginLeft="5dp"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:id="@+id/station_stNm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=" 정류소명"/>
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1">
+        <TextView
+            android:layout_marginLeft="5dp"
+            android:textSize="12dp"
+            android:id="@+id/station_arsId"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.60"
+            android:text=" ID : "/>
+
+        <TextView
+            android:textSize="12dp"
+            android:id="@+id/station_nextSt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.4"
+            android:text="방면"
+            android:textAlignment="center" />
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

@@ -1,0 +1,123 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Black Jack Game</title>
+    <style>
+        img {
+            width: 125;
+            height: 181;
+            margin: 0px 5px;
+        }
+
+        #buttons {
+            margin: 20px 0px 10px 0px;
+        }
+    </style>
+    <script src="jquery-1.12.4.min.js"></script>
+    <script>
+        var cardImageFileNames = [
+            "10_of_clubs.png", "10_of_diamonds.png", "10_of_hearts.png", "10_of_spades.png", "2_of_clubs.png",
+            "2_of_diamonds.png", "2_of_hearts.png", "2_of_spades.png", "3_of_clubs.png", "3_of_diamonds.png",
+            "3_of_hearts.png", "3_of_spades.png", "4_of_clubs.png", "4_of_diamonds.png", "4_of_hearts.png",
+            "4_of_spades.png", "5_of_clubs.png", "5_of_diamonds.png", "5_of_hearts.png", "5_of_spades.png",
+            "6_of_clubs.png", "6_of_diamonds.png", "6_of_hearts.png", "6_of_spades.png", "7_of_clubs.png",
+            "7_of_diamonds.png", "7_of_hearts.png", "7_of_spades.png", "8_of_clubs.png", "8_of_diamonds.png",
+            "8_of_hearts.png", "8_of_spades.png", "9_of_clubs.png", "9_of_diamonds.png", "9_of_hearts.png",
+            "9_of_spades.png", "ace_of_clubs.png", "ace_of_diamonds.png", "ace_of_hearts.png", "ace_of_spades.png",
+            "jack_of_clubs.png", "jack_of_diamonds.png", "jack_of_hearts.png", "jack_of_spades.png", "king_of_clubs.png",
+            "king_of_diamonds.png", "king_of_hearts.png", "king_of_spades.png", "queen_of_clubs.png", "queen_of_diamonds.png",
+            "queen_of_hearts.png", "queen_of_spades.png"];
+
+        var cardDeck;
+
+        function createPlayingCardDeck(fileNames) {
+            var array = new Array(fileNames.length);
+            for (var i = 0; i < fileNames.length; i++) {
+                array[i] = new PlayingCard(fileNames[i]);
+            }
+            return array;
+        }
+
+        function PlayingCard(imageFileName) {
+            this.imageFileName = imageFileName;
+            var res = this.imageFileName.split('_', 1); // 문자열에서 첫 번째 '_' 문자 앞 부분만 추출
+            switch (res[0]) {
+                case "ace":
+                    this.value = "ace";
+                    break;
+
+                case "jack":
+                case "queen":
+                case "king":
+                    this.value = 10;
+                    break;
+
+                default:
+                    this.value = Number(res[0]);
+                    break;
+            }
+        }
+
+        function hit() {
+            $("div#DivPlayer").append('<img src="' + 'cards/2_of_clubs.png"' + '/>');
+        }
+
+        function shuffleCardDeck(deck) {
+        }
+
+        function getRandomInt(min, max) {
+            return Math.floor(Math.random() * (max - min + 1) + min)
+        }
+
+        function displayCardDeck(deck) {
+            alert("deck");
+            $.each(deck, function (index, item) {
+                $('body').append($('<p>' + item.imageFileName + " " + item.value + '</p><br/>'));                
+            });
+        }
+
+        $(document).ready(function () {
+            cardDeck = createPlayingCardDeck(cardImageFileNames);
+            shuffleCardDeck(cardDeck);
+//            displayCardDeck(cardDeck);
+
+            $('#Hit').click(function (event) {
+                hit();
+            });
+
+            $('#ShuffleCards').click(function (event) {
+                shuffleCards();
+            });
+        });
+
+    </script>
+</head>
+
+<body>
+    <div id="Dealer">
+        <h1>Computer Dealer</h1>
+        <div id="DivComputer">
+            <!--img src="cards/king_of_diamonds2.png"/>
+      <img src="cards/playing_card.png"/-->
+        </div>
+    </div>
+    <div id="player">
+        <h1>Player</h1>
+        <div id="DivPlayer">
+            <!--img src="cards/king_of_diamonds2.png"/>
+    <img src="cards/playing_card.png"/-->
+        </div>
+    </div>
+    <div id="buttons">
+        <button id="Hit">Hit</button>
+        <button id="Stand">Stand</button>
+        <button id="NewGame">New Game</button>
+        <button id="ShuffleCards">Shuffle Cards</button>
+    </div>
+    <div id="result">
+        <h2></h2>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,175 @@
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Memory game with object</title>
+    <style>
+        body {
+            width: 940px;
+            padding: 0px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        ul {
+            margin: 0px;
+            overflow: hidden;
+            list-style-type: none;
+        }
+        
+        li img {
+            margin: 5px;
+            padding: 0px 0px;
+            float: left;
+        }
+        
+        img {
+            width: 213px;
+            height: 142px;
+        }
+    </style>
+
+<script>
+    const CS_INITIALIZED = 0;
+    const CS_HIDDEN = 1;
+    const CS_SHOWN = 2;
+    const CS_REMOVED = 3;
+    var imageFileNames = ["pic/butterfly.jpg", "pic/carrots1.jpg", "pic/carrots2.jpg", "pic/crocus.jpg", "pic/fuchs.jpg",
+        "pic/geese.jpg", "pic/goose.jpg", "pic/macro.jpg", "pic/maple.jpg", "pic/orange_juice.jpg" ];
+
+    var cards = [];
+        function getRandomInt(min, max) {
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+function Card(img) {
+    this.imgObject = img;
+    this.state = CS_HIDDEN;
+
+    this.setState = function(s) {
+        this.state = s;        
+    }
+
+    this.getState = function() {
+        return this.state;
+    }
+}
+
+Card.prototype.show = function() {
+    if (this.state == CS_HIDDEN) {
+        this.imgObject.src = "pic/playing_card.jpg";
+    }
+    else if (this.state == CS_SHOWN) {
+        this.imgObject.src = this.imageFileName;
+    }
+    else if (this.state == CS_REMOVED) {
+        this.imgObject.src = "pic/transparent.png";
+    }
+}
+
+function clickImage(img) {
+
+}
+
+function newGame() {
+    initIndexes();
+}
+
+function shuffleImages() {
+    for (var i = 0; i < 10; i++) {
+        changeIndex(i);
+        changeIndex(i);
+    }
+}
+
+function changeIndex(i) {
+    var index1 = getRandomInt(0, numLocations - 1);
+    if (cards[index1].getState() == CS_INITIALIZED) {
+          cards[index1].imgIndex = i;
+          cards[index1].imgFileName = imageFileNames[i];
+          cards[index1].setState(CS_HIDDEN);
+    }
+    else {
+        index1 = (index1 + 1) % numLocations;
+        while (cards[index1].getState() != CS_INITIALIZED) {
+                index1 = (index1 + 1) % numLocations;
+        }
+          imageIndexes[index1] = i;
+    }
+}
+
+function changeIndex(n) {
+    var n = getRandomInt(1, 20)
+}
+
+function initIndexes() {
+    for (var i = 0; i < 20; i++) {
+       cards.setState(CS_INITIALIZED);
+    }
+}
+   
+function initialize() {
+    for (var i = 0; i < 20; i++) {
+        var img = document.getElementById(i);
+        cards.push(new Card(img));
+//        cards.setState(CS_SHOWN);
+       // cards.show();
+    }
+}
+
+window.onload = function() {
+    initialize();
+}
+
+</script>
+</head>
+<body>
+    <div>
+        <ul>
+            <li><img id="1" src="pic/playing_card.jpg" onclick="clickImage(this);" /></li>
+            <li><img id="2" src="pic/playing_card.jpg" onclick="clickImage(this);" /></li>
+            <li><img id="3" src="pic/playing_card.jpg" onclick="clickImage(this);" /></li>
+            <li><img id="4" src="pic/playing_card.jpg" onclick="clickImage(this);" /></li>
+        </ul>
+    </div>
+    <div>
+        <ul>
+            <li><img id="5" src="pic/playing_card.jpg" onclick="clickImage(this);" /></li>
+            <li><img id="6" src="pic/playing_card.jpg" onclick="clickImage(this);" /></li>
+            <li><img id="7" src="pic/playing_card.jpg" onclick="clickImage(this);" /></li>
+            <li><img id="8" src="pic/playing_card.jpg" onclick="clickImage(this);" /></li>
+        </ul>
+    </div>
+    <div>
+        <ul>
+            <li><img id="9" src="pic/playing_card.jpg" onclick="clickImage(this);" /></li>
+            <li><img id="10" src="pic/playing_card.jpg" onclick="clickImage(this);" /></li>
+            <li><img id="11" src="pic/playing_card.jpg" onclick="clickImage(this);" /></li>
+            <li><img id="12" src="pic/playing_card.jpg" onclick="clickImage(this);" /></li>
+        </ul>
+    </div>
+    <div>
+        <ul>
+            <li><img id="13" src="pic/playing_card.jpg" onclick="clickImage(this);" /></li>
+            <li><img id="14" src="pic/playing_card.jpg" onclick="clickImage(this);" /></li>
+            <li><img id="15" src="pic/playing_card.jpg" onclick="clickImage(this);" /></li>
+            <li><img id="16" src="pic/playing_card.jpg" onclick="clickImage(this);" /></li>
+        </ul>
+    </div>
+    <div>
+        <ul>
+            <li><img id="17" src="pic/playing_card.jpg" onclick="clickImage(this);" /></li>
+            <li><img id="18" src="pic/playing_card.jpg" onclick="clickImage(this);" /></li>
+            <li><img id="19" src="pic/playing_card.jpg" onclick="clickImage(this);" /></li>
+            <li><img id="20" src="pic/playing_card.jpg" onclick="clickImage(this);" /></li>
+        </ul>
+    </div>
+    <div id="Buttons">
+        <button id="resetImages" onclick="newGame();">New game</button>
+        <button id="showImages" onclick="showAllImages();">Show all images</button>
+        <button id="hideImages" onclick="hideAllImages();">Hide all images</button>
+    </div>
+    <div>
+        <h1 id="seconds">0초</h1>
+    </div>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!Doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"  />
+    <title>201311196 김수연</title>
+    <style>
+      *{
+        margin: 0px;
+        padding :0px;
+      }
+
+      #head{
+
+        width:630px;
+        height: 200;
+        font-size:30px;
+        font-weight:bold;
+        background-color: green;
+        margin-top: 20px;
+        margin-left: 3%;
+        text-align: center;
+        }
+
+      #textfield{
+        margin-left:13%;
+        margin-top: 2%;
+        margin-bottom:2%;
+
+      }
+      #person{
+        margin-left: 28%
+        text-align: center;
+        font-weight: bold;
+        font-size: 30px;
+      }
+      #com{
+        margin-left: 23%;
+        text-align: center;
+        font-weight: bold;
+        font-size: 30px;
+      }
+      #imagefield{
+        margin-left: 3%;
+
+      }
+      #buttonfield{
+        margin-top:%1;
+        margin-left: 13%;
+        margin-bottom: 2%;
+      }
+      #result{
+        width: 630px;
+        font-size:30px;
+        font-weight: bold;
+        text-align: center;
+        background-color: purple;
+        margin-left: 3%;
+      }
+
+    </style>
+    <script>
+      var Com_rsp; //컴퓨터 가위바위보
+      var User_rsp; //사용자 가위바위보
+
+      //1. 컴퓨터의 가위바위보 값
+      function ComHand(){
+      Com_rsp=Math.floor((Math.random()*3));
+      return Com_rsp;
+      }
+
+
+      //2. 사용자의 가위바위보 값.
+      function UserHand(hand){
+        User_rsp=hand;
+        ChangeImage("user");
+      }
+      //3. 가위바위보에 따라서 이미지 바뀌는 함수
+      function ChangeImage(who){
+        if(who=="user") {
+          var uimage=document.getElementById("pimage");
+          if(User_rsp==0) uimage.src="rock.png";
+          else if(User_rsp==1) uimage.src="scissors.png";
+          if(User_rsp==2) uimage.src="paper.png";
+        }
+        else {
+          var image=document.getElementById("cimage");
+          if(Com_rsp==0)image.src="rock.png";
+          else if(Com_rsp==1)image.src="scissors.png";
+          if(Com_rsp==2)image.src="paper.png";
+        }
+      }
+      //4. 컴퓨터 사용자의 가위바위보 결과를 비교하는 함수.
+      function GameResult(){
+        var result=document.getElementById("result");
+        if(User_rsp==Com_rsp) result.innerHTML="사람과 컴퓨터가 비겼습니다.";
+        else if (User_rsp==2){
+          if(Com_rsp)    result.innerHTML="사람은 컴퓨터에게 졌습니다.";
+          else           result.innerHTML="사람은 컴퓨터에게 이겼습니다.";
+        }
+        else if (Com_rsp==2){
+          if(User_rsp) result.innerHTML="사람은 컴퓨터에게 이겼습니다.";
+          else           result.innerHTML="사람은 컴퓨터에게 졌습니다.";
+        }
+        else {
+          if (User_rsp) result.innerHTML="사람은 컴퓨터에게 졌습니다.";
+          else          result.innerHTML="사람은 컴퓨터에게 이겼습니다.";
+        }
+      }
+
+
+
+        //4.메인함수.
+      function Main(hand){
+        UserHand(hand);
+        ComHand();
+        ChangeImage();
+        GameResult();
+      }
+
+    </script>
+  </head>
+  <body>
+
+    <div id="head" style= "text-align:center">가위바위보 게임    </div>
+    <div id="textfield">
+      <span id="person" > 사람 </span>
+      <span id="com" > 컴퓨터 </span>
+    </div>
+    <div id="imagefield">
+      <img id= "pimage" src="http://placehold.it/320x320" />
+      <img id= "cimage" src="http://placehold.it/320x320" />
+    </div>
+    <div id="buttonfield">
+      <button id="s" onclick= Main(1)>가위</button>
+      <button id="r" onclick= Main(0)>바위</button>
+      <button id="p"onclick= Main(2)>보</button>
+    </div>
+    <div id="result">게임 결과    </div>
+  </body>
+
+</html>

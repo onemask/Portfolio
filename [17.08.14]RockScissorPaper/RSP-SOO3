@@ -1,0 +1,32 @@
+<!Doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"  />
+    <title>나의 가위바위보</title>
+    <style>
+
+    </style>
+    <script>
+
+
+    </script>
+  </head>
+  <body>
+    <div>가위바위보 게임    </div>
+    <div>
+      <span> 사람 </span>
+      <span>컴퓨터 </span>
+    </div>
+    <div>
+      <span> 사람 이미지 </span>
+      <span> 컴퓨터 이미지 </span>  
+    </div>
+    <div>
+      <span> 가위</span>
+      <span> 바위 </span>
+      <span> 보 </span>
+    </div>
+    <div>게임 결과    </div>
+  </body>
+
+</html>

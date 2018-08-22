@@ -1,0 +1,79 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>Black Jack Game</title>
+<style>
+    img {
+        width: 125;
+        height: 181;
+        margin: 0px 5px;
+    }
+
+    #buttons {
+        margin: 20px 0px 10px 0px;
+    }
+</style>
+<script src="jquery-1.12.4.min.js"></script>
+<script>
+  var card_file_names = [
+      "10_of_clubs.png", "10_of_diamonds.png", "10_of_hearts.png", "10_of_spades.png", "2_of_clubs.png"
+      "2_of_diamonds.png", "2_of_hearts.png", "2_of_spades.png", "3_of_clubs.png", "3_of_diamonds.png",
+      "3_of_hearts.png", "3_of_spades.png", "4_of_clubs.png", "4_of_diamonds.png", "4_of_hearts.png",
+      "4_of_spades.png", "5_of_clubs.png", "5_of_diamonds.png", "5_of_hearts.png", "5_of_spades.png", 
+      "6_of_clubs.png", "6_of_diamonds.png", "6_of_hearts.png", "6_of_spades.png", "7_of_clubs.png", 
+      "7_of_diamonds.png", "7_of_hearts.png", "7_of_spades.png", "8_of_clubs.png", "8_of_diamonds.png", 
+      "8_of_hearts.png", "8_of_spades.png", "9_of_clubs.png", "9_of_diamonds.png", "9_of_hearts.png", 
+      "9_of_spades.png", "ace_of_clubs.png", "ace_of_diamonds.png", "ace_of_hearts.png", "ace_of_spades.png", 
+      "ace_of_spades2.png", "jack_of_clubs.png", "jack_of_clubs1.png", "jack_of_diamonds.png", 
+      "jack_of_diamonds1.png", "jack_of_hearts.png", "jack_of_hearts1.png", "jack_of_spades.png", 
+      "jack_of_spades1.png", "king_of_clubs.png", "king_of_clubs1.png", "king_of_diamonds.png", 
+      "king_of_diamonds1.png", "king_of_hearts.png", "king_of_hearts1.png", "king_of_spades.png", 
+      "king_of_spades1.png", "queen_of_clubs.png", "queen_of_clubs1.png", "queen_of_diamonds.png", 
+      "queen_of_diamonds1.png", "queen_of_hearts.png", "queen_of_hearts1.png", "queen_of_spades.png", 
+      "queen_of_spades1.png" ];
+      
+  function hit() {
+      $("div#DivPlayer").append('<img src="' + 'cards/2_of_clubs.png"' + '/>');
+  }
+
+  $(document).ready(function() {
+      $('#Hit').click(function (event) {
+          hit();      
+      });
+
+      $('ShuffleCards').click(function (event) {
+          shuffleCards();
+      });
+  });
+</script>
+</head>
+<body>
+<div id="Dealer">
+    <h1>Computer Dealer</h1>
+    <div id="DivComputer">
+      <img src="cards/king_of_diamonds.png"/>
+      <img src="cards/playing_card.png"/>
+    </div>
+</div>
+<div id="player">
+    <h1>Player</h1>
+    <div id="DivPlayer">
+    <img src="cards/king_of_spades.png"/>
+    <img src="cards/ace_of_clubs.png"/>
+    <img src="cards/2_of_hearts.png"/>
+    <img src="cards/5_of_spades.png"/>   
+    </div>
+</div>
+<div id="buttons">
+  <button id="Hit">Hit</button>
+  <button id="Stand">Stand</button>
+  <button id="NewGmae">New Game</button>
+  <button id="ShuffleCards">Shuffle Cards</button>
+</div>
+<div id="result">
+   <!--h2>컴퓨터 딜러가 이겼습니다</h2>
+   <h2>컴퓨터 딜러의 카드 합계: 20</h2>
+   <h2>플레이어의 카드 합계: 18</h2-->
+</div>
+</body>
+</html>

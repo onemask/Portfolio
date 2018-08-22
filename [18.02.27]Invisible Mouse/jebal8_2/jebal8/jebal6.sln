@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jebal6", "jebal6.csproj", "{7E4E7E18-D09A-DAEF-8336-423B4BD7E6E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jebal6.Editor", "jebal6.Editor.csproj", "{F76133EA-C493-D08E-2B47-5B6E955022B1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7E4E7E18-D09A-DAEF-8336-423B4BD7E6E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E4E7E18-D09A-DAEF-8336-423B4BD7E6E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E4E7E18-D09A-DAEF-8336-423B4BD7E6E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E4E7E18-D09A-DAEF-8336-423B4BD7E6E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F76133EA-C493-D08E-2B47-5B6E955022B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F76133EA-C493-D08E-2B47-5B6E955022B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F76133EA-C493-D08E-2B47-5B6E955022B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F76133EA-C493-D08E-2B47-5B6E955022B1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

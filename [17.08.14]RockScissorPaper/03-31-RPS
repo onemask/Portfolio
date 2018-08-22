@@ -1,0 +1,142 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>201311196 김수연</title>
+    <link rel="stylesheet" href="stylesheet.css" />
+    <script src="script.js"></script>
+  </head>
+
+  <body>
+    <div id="header" style="text-align:center"> 가위바위보 게임 </div>
+
+    <div >
+      <span id="Ptext" > 사람 </span>
+      <span id="Ctext"> 컴퓨터</span>
+    </div>
+
+    <div>
+      <span>
+      <img id = "Pimage" src="http://placehold.it/320x320" />
+      <img id = "Cimage" src="http://placehold.it/320x320" />
+      </span>
+    </div>
+
+    <div>
+      <span id="Pbutton"style="text-align:center">
+        <button id="PS" onclick = playRSP(1)> 가위 </button>
+        <button id="PR" onclick = playRSP(0)> 바위 </button>
+        <button id="PP" onclick = playRSP(2)> 보 </button>
+      </span>
+    </div>
+
+    <div id="gameResult" style="text-align:center"> 게임 결과 </div>
+
+  </body>
+</html>
+
+#header {
+  width:960px;
+  font-size: large;
+  font-weight:bold;
+  width:640px;
+  background-color: green; }
+
+#sdnavigation{
+  font-weight:bold;
+  padding :30px;
+}
+#Ptext{
+  font-size :large;
+  font-weight:bold;
+  padding-left:100px;
+  padding-right:100px;
+  padding-top: 30px;
+  padding-bottom:30px;
+}
+#Ctext{
+  font-size :large;
+  font-weight:bold;
+  padding-left:100px;
+  padding-right:100px;
+  padding-top: 30px;
+  padding-bottom:30px;
+
+}
+#Pbutton{
+  margin-left: 100px;
+  margin-right: 80px;
+  width:320px;
+}
+#Cbutton{
+  margin-left: 100px;
+  margin-right: 80px;
+  width:320px;
+}
+#GameResult{
+  width:960px;
+  font-size: large;
+  font-weight:bold;
+  width:640px;
+  background-color: purple;
+}
+
+// 0 = rock
+// 1 = scissors
+// 2 = paper
+
+var personHand;
+var computerHand;
+
+//1. 컴퓨터 가위바위보 값을 정하는 함수
+function makeComputerHand(){
+  computerHand = Math.floor(Math.random()*3);
+  changeImage(1);
+}
+
+//2. 컴퓨터 사진을 바꾸는 함수.
+function changeImage (player) {
+  if (player == 1) {
+    var comImage = document.getElementById("Cimage");
+    if      (computerHand == 0) comImage.src = "rock.png" ;
+    else if (computerHand == 1) comImage.src = "scissors.png" ;
+    else                        comImage.src = "paper.png" ;
+  }
+  else {
+    var personImage = document.getElementById("Pimage");
+    if      (personHand == 0) personImage.src = "rock.png" ;
+    else if (personHand == 1) personImage.src = "scissors.png" ;
+    else                      personImage.src = "paper.png" ;
+  }
+}
+
+function makePersonHand(hand){
+  personHand = hand;
+  changeImage(2);
+}
+
+function changeResult() {
+  var resultText = document.getElementById("gameResult");
+  if (personHand == computerHand) resultText.innerText = "SAME !!";
+  else if (personHand == 2){
+    if (computerHand) resultText.innerText = "Computer WIN !!";
+    else resultText.innerText = "Player WIN !!";
+  }
+  else if (computerHand == 2){
+    if (personHand) resultText.innerText = "Player WIN !!";
+    else resultText.innerText = "Computer WIN !!";
+  }
+  else{
+    if (personHand) resultText.innerText = "Computer WIN !!";
+    else resultText.innerText = "Player WIN !!";
+  }
+}
+
+function playRSP (hand){
+  makePersonHand(hand);
+  makeComputerHand();
+  changeResult();
+}
+
+
+//3. 사람 버튼 해당 이미지 출력해주기.

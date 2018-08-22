@@ -1,0 +1,210 @@
+<!doctype html>
+<html>
+  <head>
+    <script language="javascript"></script>
+    <meta charset="utf-8" />
+    <title>201311196 김수연</title>
+    <style>
+      *{
+        margin: 0px;
+        padding :0px;
+      }
+
+    </style>
+
+    <script>
+    var images=["butterfly.jpg","carrots1.jpg","robin.jpg","goose.jpg","fuchs.jpg",
+                "carrots2.jpg","crocus.jpg","wooden_swing.jpg","plants.jpg","orange_juice.jpg"];
+    var clone=images.slice(0,10); //이미지 복사
+    var cards=images.concat(clone);//이미지 합성 카드 이미지 20개
+    var output='';
+    var ShuffleCards = new Array(20); //랜덤 이미지
+    var check= [null,null];
+    var CheckNum = 0; //배열에 2개 들어갔는지 확인하는 변수 .
+    var PairNum = 0; //카드 쌍이 10개이면 time꺼져.
+    var firstCardNum = null;
+    var seeCard=false;
+    var time;
+
+
+
+    function shuffle(o){ //섞는 함수.
+      for(var j, x, i = o.length; i;
+          j = Math.floor(Math.random() * i),
+          x = o[--i],o[i] = o[j], o[j] = x);
+      return o; } //랜덤으로 이미지  섞음.
+
+    function showImg() //랜덤으로 섞은 카드를 다시 배열로 집어 넣음.
+    {
+      output = '';
+      shuffle(cards);
+
+      for(var i=0;i<cards.length;i++){
+        ShuffleCards[i]=cards[i];
+    }
+      for(var i=0;i<ShuffleCards.length;i++){
+        output+= "" +ShuffleCards[i] +"\n";
+      }
+      return output;
+    }
+
+      showImg();
+
+      function GodMinzy(){ //모든 이미지를 보여주는 함수 .
+        seeCard = true;
+        for(var i=1;i<=20;i++){
+          var img = document.getElementById("img"+i);
+          img.src = ShuffleCards[i-1];
+          }
+        }
+
+      function newGame(){
+
+        CountTime(1);
+        for(var i=1;i<=20;i++){
+        var img = document.getElementById("img"+i);
+        img.src="playing_card.jpg";}
+
+        showImg();
+        ResetCheck();
+        }
+
+      function ResetImg(){ //모든 이미지가 리셋
+        showImg();
+        GodMinzy();
+        ResetCheck();
+      }
+
+       function ResetCheck(){
+         CheckNum = 0;
+       }
+
+
+      function UseTimer(i){ //한번만 클릭하고 원래대로 돌아오는 함수.
+        var img = document.getElementById("img"+String(i) );
+        img.src = ShuffleCards[i-1];  // 클릭했을때 이미지가 보이게끔.
+
+        if( CheckNum == 0){ //한번 클릭했을때
+          firstCardNum = i;
+          check[0] =  SameCard(i);
+          CheckNum += 1;
+        }
+
+        else {
+          if(firstCardNum != i){
+          check[1] = SameCard(i);
+
+          if(check[0] == check[1]){ //한번 클릭하고 두번클릭했을떄
+            PairNum += 1;
+            ShuffleCards[i-1]="transparent.png";
+            ShuffleCards[firstCardNum-1]="transparent.png";
+            ResetCheck();
+            setTimeout(function(){
+              img.src = "transparent.png";
+              document.getElementById("img" + String(firstCardNum)).src = "transparent.png";   } ,   500);
+            }
+          else { //같지 않아.
+            if(seeCard){ //카드 앞모양일떄
+              ResetCheck();
+            }
+            else { //카드 뒷모양일떄
+              ResetCheck();
+              setTimeout( function() {  HideImg(); } , 500 );
+              }
+          }
+        }
+      }
+
+        }
+
+
+      function SameCard(i){ //한번만 클릭하고 원래대로 돌아오는 함수.
+        var img=document.getElementById("img"+String(i) );
+        img.src = ShuffleCards[i-1];
+        return ShuffleCards[i-1];
+
+      }
+
+
+
+      function HideImg(){ //모든 이미지를 playing card로 숨겨주는 함수.
+        for(var i=1;i<=20;i++){
+          var img = document.getElementById("img"+i);
+          if( ShuffleCards[i-1]=="transparent.png" )
+            img.src = "transparent.png";
+          else
+            img.src = "playing_card.jpg";
+        }
+        seeCard=false;
+      }
+
+      function showCard(i){ //모든 이미지를 보여주는 함수.
+          var num = i;
+          showImg();
+          for (var i=1;i=shffleCards.length;i++){
+          var img=document.getElementById("img"+i);
+          img.src=ShuffleCards[i-1];
+          }
+        }
+
+      function CountTime(t){
+        if ( PairNum == 10){
+          var header=document.getElementById("count");
+          header.innerHTML = "총 게임 시간 : " + t + " : 초";
+          return;
+        }
+        else{
+          clearTimeout(time);
+          var header=document.getElementById("count");
+          header.innerHTML = t + "  초";
+          time=setTimeout(function(){ CountTime(t+1);}, 1000);
+
+
+        }
+      }
+
+    </script>
+  </head>
+
+  <body>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" height="100%"><tr><td valign="middle" align="center">
+    <div id="one" style="margin-top: 2%">
+
+      <img id = "img1" onclick= UseTimer(1); width="320" height="213" src="playing_card.jpg"/>
+      <img id = "img2" onclick= UseTimer(2); width="320" height="213" src="playing_card.jpg"/>
+      <img id = "img3" onclick= UseTimer(3); width="320" height="213" src="playing_card.jpg"/>
+      <img id = "img4" onclick= UseTimer(4); width="320" height="213" src="playing_card.jpg"/>
+    </div>
+    <div>
+      <img id = "img5" onclick= UseTimer(5); width="320" height="213" src="playing_card.jpg"/>
+      <img id = "img6" onclick= UseTimer(6);width="320" height="213" src="playing_card.jpg"/>
+      <img id = "img7" onclick= UseTimer(7);width="320" height="213" src="playing_card.jpg"/>
+      <img id = "img8" onclick= UseTimer(8); width="320" height="213" src="playing_card.jpg"/>
+    </div>
+    <div>
+      <img id = "img9"  onclick= UseTimer(9); width="320" height="213" src="playing_card.jpg"/>
+      <img id = "img10" onclick= UseTimer(10); width="320" height="213" src="playing_card.jpg"/>
+      <img id = "img11" onclick= UseTimer(11); width="320" height="213" src="playing_card.jpg"/>
+      <img id = "img12" onclick= UseTimer(12); width="320" height="213" src="playing_card.jpg"/>
+    </div>
+    <div>
+      <img id = "img13"  onclick= UseTimer(13); width="320" height="213" src="playing_card.jpg"/>
+      <img id = "img14"  onclick= UseTimer(14); width="320" height="213" src="playing_card.jpg"/>
+      <img id = "img15"  onclick= UseTimer(15); width="320" height="213" src="playing_card.jpg"/>
+      <img id = "img16"  onclick= UseTimer(16); width="320" height="213" src="playing_card.jpg"/>
+    </div>
+    <div>
+      <img id = "img17"  onclick= UseTimer(17); width="320" height="213" src="playing_card.jpg"/>
+      <img id = "img18"  onclick= UseTimer(18); width="320" height="213" src="playing_card.jpg"/>
+      <img id = "img19"  onclick= UseTimer(19); width="320" height="213" src="playing_card.jpg"/>
+      <img id = "img20"  onclick= UseTimer(20); width=""width="320" height="213" src="playing_card.jpg"/>
+      <div id="buttonfield">
+        <button id="reset" onclick= newGame(); style="font-size: 30pt; width: 350px; margin-top: 30px">New game</button>
+        <button id="show" onclick= GodMinzy(); style="font-size: 30pt; width: 350px">Show All Images</button>
+        <button id="Hide" onclick= HideImg(); style="font-size: 30pt; width: 350px; margin-bottom: 30px">Hide all images</button>
+      </div>
+      <div id="countfield">
+        <h1 id="count" onclick= CountTime(1); style="font-size: 40pt">0초</h1>
+      </div>
+      </td></tr></table>
+</html>

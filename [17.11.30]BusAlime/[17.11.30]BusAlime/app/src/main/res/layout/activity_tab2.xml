@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_marginTop="10dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView"
+        android:text="버스 "
+        android:textStyle="bold"
+        android:layout_marginBottom="3dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView"
+        android:id="@+id/frameLayout">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/xml_boreder" />
+
+
+        <EditText
+            android:id="@+id/stName"
+            android:hint="버스번호를 입력해주세요."
+            android:layout_width="298dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="7dp"
+            android:background="@drawable/rounded_edit"
+            android:gravity="center"
+            android:inputType="textPersonName"
+            android:singleLine="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+    </FrameLayout>
+
+    <!--<View-->
+    <!--android:layout_marginTop="5dp"-->
+    <!--android:layout_below="@+id/button3"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="2dp"-->
+    <!--android:layout_centerInParent="true"-->
+    <!--android:background="#FF0000"/>-->
+
+
+
+    <ListView
+        android:id="@+id/rltList"
+        android:layout_marginTop="5dp"
+        android:dividerHeight="2dp"
+        android:divider="#DCDCDC"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/frameLayout" />
+
+
+    <Button
+        android:textSize="14dp"
+        android:id="@+id/button3"
+        android:layout_width="57dp"
+        android:layout_height="35dp"
+        android:background="#00ff0000"
+        android:gravity="center"
+        android:text="검색"
+        android:layout_alignBottom="@+id/frameLayout"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/frameLayout" />
+
+
+
+</RelativeLayout>

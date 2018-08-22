@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>가위바위보 게임</title>
+    <script>
+      var Person;
+      var Computer;
+      var Score;
+
+      //1. 컴퓨터 가위바위보 값을 정하는 함수
+      function RSP(){
+        Computer=Math.random();
+        alert (Computer);
+        return Computer;
+      }
+
+      //2. 컴퓨터 사진을 출력하는 함수.
+      function ChangeImage() {
+       var image=document.getElementById("cimage");
+        alert(Computer);
+
+        if (Computer<0.34){
+          image.src="scissors.png"
+          alert("지금 가위");
+        }
+        else if (Computer>0.34&&Computer<=0.67){
+          image.src="paper.png"
+          alert("지금 보");
+
+        }
+        else{
+          image.src="rock.png"
+          alert("지금 주먹");
+
+        }
+      }
+
+      // function ButtonEvent(int num){
+      //
+      //   var button=this.num;
+      //   var pImage=document.getElmentById("pimage");
+      //   if(button==0){
+      //     pimage.src="scissors.png";
+      //     }
+      //   else if(button==1{
+      //       pimage.src="rock.png";
+      //       }
+      //   else
+      //         pimage.src="paper.png";
+      //
+      //   }
+
+
+      function PlayRsp(){
+        RSP();
+        ChangeImage();
+        //ButtonEvent();
+    }
+
+
+      //3. 사람 버튼 해당 이미지 출력해주기.
+    </script>
+
+
+    <style>
+      #header {
+        width:960px;
+        font-size: large;
+        font-weight:bold;
+        width:640px;
+        background-color: green; }
+      #sdnavigation{
+        font-weight:bold;
+        padding :30px;
+      }
+      #Ptext{
+        font-size :large;
+        font-weight:bold;
+        padding-left:100px;
+        padding-right:100px;
+        padding-top: 30px;
+        padding-bottom:30px;
+      }
+      #Ctext{
+        font-size :large;
+        font-weight:bold;
+        padding-left:100px;
+        padding-right:100px;
+        padding-top: 30px;
+        padding-bottom:30px;
+
+      }
+      #Pbutton{
+        margin-left: 100px;
+        margin-right: 80px;
+        width:320px;
+      }
+      #Cbutton{
+        margin-left: 100px;
+        margin-right: 80px;
+        width:320px;
+      }
+      #GameResult{
+        width:960px;
+        font-size: large;
+        font-weight:bold;
+        width:640px;
+        background-color: purple;
+      }
+
+
+    </style>
+  </head>
+  <body>
+  <div id="header" style="text-align:center">가위바위보 게임 </div>
+  <div >
+    <span id="Ptext" > 사람 </span>
+    <span id="Ctext"> 컴퓨터</span>
+  </div>
+  <div>
+    <span>
+    <img id ="pimage" src="http://placehold.it/320x320" />
+    <img id="cimage" src="http://placehold.it/320x320" />
+    </span>
+  </div>
+  <div>
+    <span id="Pbutton"style="text-align:center">
+      <button id="ps" onclick= PlayRsp()> 가위 </button>
+      <button id="pr" onclick= PlayRsp()> 바위 </button>
+      <button id="pp" onclick= PlayRsp()> 보 </button>
+    </span>
+      </div>
+    <div id="GameResult"style="text-align:center">게임 결과</div>
+
+</body></html>
+</html>

@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">안내양</string>
+    <string name="station_search">정류소 검색</string>
+    <string name="busnum_search">버스 번호 검색</string>
+
+  //!-------------복붙 -------------
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">ㅇㅇㅇ</string>
+    <string name="str_stop"> 정류소 검색 </string>
+    <string name="str_busnum"> 버스번호 검색 </string>
+    <string name="str_setting"> 환경 설정</string>
+    <string name="str_bookmark">즐겨 찾기</string>
+    <string name="str_item1"> 상명 대학교</string>
+    <string name="str_item2">혜원탕</string>
+    //!-------------what ------------------
+    <string name="second_activity_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin consectetur diam id aliquam scelerisque. Donec ultrices lacus vel dignissim pharetra. Vivamus pharetra augue quis rhoncus placerat. Sed ultricies at risus non cursus. Nam rutrum leo nec placerat consectetur. Vestibulum feugiat eleifend diam, nec interdum augue tincidunt sit amet. Praesent feugiat est auctor lacus consectetur, vitae pellentesque dolor laoreet.</string>
+    <string name="title_activity_second">SecondActivity</string>
+</resources>

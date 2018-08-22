@@ -1,0 +1,73 @@
+{
+  "project_info": {
+    "project_number": "522778428157",
+    "firebase_url": "https://project1-88a3c.firebaseio.com",
+    "project_id": "project1-88a3c",
+    "storage_bucket": "project1-88a3c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:522778428157:android:00deeffa7fad6188",
+        "android_client_info": {
+          "package_name": "com.memoming.busalime.Activity"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "522778428157-ianiehipftka02cjhhmr9smg63tfqg7h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDncdU-QAsrlscd3R4O0t63nxknpnSsow4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:522778428157:android:acc0a9ee60ab88fe",
+        "android_client_info": {
+          "package_name": "ssj.imgebuttontest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "522778428157-ianiehipftka02cjhhmr9smg63tfqg7h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDncdU-QAsrlscd3R4O0t63nxknpnSsow4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
