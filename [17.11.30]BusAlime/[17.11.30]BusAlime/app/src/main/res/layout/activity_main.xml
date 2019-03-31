@@ -9,7 +9,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     android:background="@drawable/main_png"
-    tools:context="com.memoming.busalime.Activity.MainActivity">
+    tools:context="com.onemask.busalime.Activity.MainActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"

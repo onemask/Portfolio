@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:737914874289:android:8184a675b12f5e9c",
         "android_client_info": {
-          "package_name": "com.memoming.busalime"
+          "package_name": "com.onemask.busalime"
         }
       },
       "oauth_client": [
@@ -18,7 +18,7 @@
           "client_id": "737914874289-ug8ma7jti473rm2602h6g1vhdpg7bbm3.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.memoming.busalime",
+            "package_name": "com.onemask.busalime",
             "certificate_hash": "5758a6039e32353f653b82105120ce9ff588d4a1"
           }
         },

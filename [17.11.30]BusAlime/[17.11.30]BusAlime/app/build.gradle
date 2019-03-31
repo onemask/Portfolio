@@ -5,7 +5,7 @@ android {
     buildToolsVersion '27.0.3'
     defaultConfig {
         multiDexEnabled true
-        applicationId "com.memoming.busalime"
+        applicationId "com.onemask.busalime"
         minSdkVersion 16 //15
         targetSdkVersion 25
         versionCode 1
